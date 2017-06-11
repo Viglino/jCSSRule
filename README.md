@@ -1,6 +1,6 @@
 # jQuery-stylesheet
 
- A simple jQuery plugin to manipulate CSS styleSheet. 
+ A simple jQuery plugin to manipulate CSS style sheet and set dynamic rules. 
 
 ## How it runs?
 
