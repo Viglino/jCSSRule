@@ -13,18 +13,11 @@
 (function ($) {
 	// Create a new stylesheet in the bottom of the <body> 
 	// or the <head> depending on the place of the file
-	/*
-    var style = document.createElement('style');
-    if (document.body) document.body.appendChild(style);
-    else if (document.head) document.head.appendChild(style);
-	else document.getElementsByTagName('head')[0].appendChild(style);
-    var stylesheet = window.stylesheet = style.sheet || style.styleSheet;
-	*/
 	var stylesheet = $("<style>")
 		.prop("type", "text/css")
-		.html("")
 		.appendTo(document.body||'head');
 
+	// List of rules
 	var rules = [];
 
 	function getRuleId (selector, property)
