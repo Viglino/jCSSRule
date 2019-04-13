@@ -1,110 +1,114 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>jQuery.cssRule</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>jQuery.cssRule</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<meta name="description" content="A simple jQuery plugin to manipulate CSS cssRule." />
-	<meta name="keywords" content="jQuery, plugin, style, cssRule, css" />
+  <meta name="description" content="Handle CSS rule with JS." />
+  <meta name="keywords" content="style, cssRule, css" />
 
-	<!-- Default style -->
-	<style>
-		body
-		{	font-family: 'Lucida Grande',Verdana,Geneva,Lucida,Arial,Helvetica,sans-serif;
-			font-size: 16px;
-			background: #efefff;
-		}
-		h1
-		{	padding: 0.5em;
-			margin: 0;
-			color: #369;
-		}
-		h2
-		{	margin: 1em 0 0;
-		}
-		button
-		{	background: #369;
-			color: #fff;
-			padding: 0.2em 0.5em;
-			border: 0;
-			font-size: 1.1em;
-		}
-		code
-		{	display: block;
-			background: #eee;
-			padding: 0.5em;
-		}
-		li code
-		{	padding: 0 0.5em;
-			display:inline;
-		}
-	</style>
+  <!-- Default style -->
+  <style>
+    body {
+      font-family: 'Lucida Grande',Verdana,Geneva,Lucida,Arial,Helvetica,sans-serif;
+      font-size: 16px;
+      background: #efefff;
+    }
+    h1 {
+      padding: 0.5em;
+      margin: 0;
+      color: #369;
+    }
+    h2 {
+      margin: 1em 0 0;
+    }
+    button {
+      background: #369;
+      color: #fff;
+      padding: 0.2em 0.5em;
+      border: 0;
+      font-size: 1.1em;
+    }
+    code {
+      display: block;
+      background: #eee;
+      padding: 0.5em;
+    }
+    li code {
+      padding: 0 0.5em;
+      display:inline;
+    }
+  </style>
 
-	<!-- jQuery -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<!-- -->
-	<script type="text/javascript" src="jquery-cssrule.js"></script>
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- -->
+  <script type="text/javascript" src="jcssrule.js"></script>
 
 </head>
 <body >
-	<h1>jQuery.cssRule</h1>
+  <h1>jCSSRule</h1>
 
-	<p class="info">
-		A simple jQuery plugin to manipulate CSS css rules.
-		<br/>
-		The plugin insert a new style sheet element on the page. 
-		It will be inserted where the js code is placed (head or body) 
-		and will override other CSS style sheets placed before.
-	</p>
-	<ul>
-		<li>
-			Use <code>$(selector).cssRule(property,value)</code> or <code>$(selector).cssRule({ property:value })</code> to add
-			new rules for the selector.
-		</li>
-		<li>
-			<code>$(selector).cssRule(property)</code> to get the value for that key.
-		</li>		
-		<li>
-			<code>$(selector).cssRule(property,null)</code> will remove the rule and use
-			the default one defined in the css.
-		</li>
-		<li>
-			<code>$("*").cssRule(null)</code> will remove all previous rules.
-		</li>
-</ul>
+  <p class="info">
+    Usefull fucntions to manipulate CSS rules.
+    <br/>
+    It insert a new style sheet element on the page. 
+    It will be inserted where the js code is placed (head or body) 
+    and will override other CSS style sheets placed before.
+  </p>
+  <ul>
+    <li>
+      Use <code>jCSSRule(selector,property,value)</code> or <code>jCSSRule(selector,{ property:value })</code> to add
+      new rules for the selector.
+    </li>
+    <li>
+      <code>jCSSRule(selector,property)</code> to get the value for that key.
+    </li>		
+    <li>
+      <code>jCSSRule(selector,property,null)</code> will remove the rule and use
+      the default one defined in the css.
+    </li>
+    <li>
+      <code>jCSSRule("*",null)</code> will remove all previous rules.
+    </li>
+  </ul>
+  <p class="info">
+    If you better like the jQuery syntaxe, use <a href="jqindex.html">the jQuery plugin</a>
+  </p>
 
-	<h2>Background</h2>
-	<code>
-		$("body").cssRule({ background:xxx });
-	</code>
-	<button onclick='$("body").cssRule({ background:null })'>Default</button>
-	<button onclick='$("body").cssRule({ background:"#fcc" })'>Red</button>
-	<button onclick='$("body").cssRule({ background:"#ffc" })'>Yellow</button>
-	<button onclick='$("body").cssRule({ background:"#cfc" })'>Green</button>
 
-	<h2>Title</h2>
-	<code>
-		$("h1,h2").cssRule({ color:xxx, background:xxx });
-	</code>
-	<button onclick='$("h1,h2").cssRule({ color:null, background:null })'>Default</button>
-	<button onclick='$("h1,h2").cssRule({ color:"#963", background:"#f88" })'>Red</button>
-	<button onclick='$("h1,h2").cssRule({ color:"#993", background:"#ff8" })'>Yellow</button>
-	<button onclick='$("h1,h2").cssRule({ color:"#396", background:"#8f8" })'>Green</button>
+  <h2>Background</h2>
+  <code>
+    jCSSRule("body",{ background:xxx });
+  </code>
+  <button onclick='jCSSRule("body",{ background:null })'>Default</button>
+  <button onclick='jCSSRule("body",{ background:"#fcc" })'>Red</button>
+  <button onclick='jCSSRule("body",{ background:"#ffc" })'>Yellow</button>
+  <button onclick='jCSSRule("body",{ background:"#cfc" })'>Green</button>
 
-	<h2>Buttons</h2>
-	<code>
-		$("button").cssRule({ background:xxx });
-	</code>
-	<button onclick='$("button").cssRule({ background:null })'>Default</button>
-	<button onclick='$("button").cssRule({ background:"#963" })'>Red</button>
-	<button onclick='$("button").cssRule({ background:"#993" })'>Yellow</button>
-	<button onclick='$("button").cssRule({ background:"#396" })'>Green</button>
-	
-	<h2>Reset</h2>
-	<code>
-		$("*").cssRule(null);
-	</code>
-	<button onclick='$("*").cssRule(null)'>Remove all styles</button>
+  <h2>Title</h2>
+  <code>
+    jCSSRule("h1,h2",{ color:xxx, background:xxx });
+  </code>
+  <button onclick='jCSSRule("h1,h2",{ color:null, background:null })'>Default</button>
+  <button onclick='jCSSRule("h1,h2",{ color:"#963", background:"#f88" })'>Red</button>
+  <button onclick='jCSSRule("h1,h2",{ color:"#993", background:"#ff8" })'>Yellow</button>
+  <button onclick='jCSSRule("h1,h2",{ color:"#396", background:"#8f8" })'>Green</button>
+
+  <h2>Buttons</h2>
+  <code>
+    jCSSRule("button",{ background:xxx });
+  </code>
+  <button onclick='jCSSRule("button",{ background:null })'>Default</button>
+  <button onclick='jCSSRule("button",{ background:"#963" })'>Red</button>
+  <button onclick='jCSSRule("button",{ background:"#993" })'>Yellow</button>
+  <button onclick='jCSSRule("button",{ background:"#396" })'>Green</button>
+  
+  <h2>Reset</h2>
+  <code>
+    jCSSRule("*",null);
+  </code>
+  <button onclick='jCSSRule("*",null)'>Remove all styles</button>
 
 </body>
 </html>
