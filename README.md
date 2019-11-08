@@ -1,19 +1,21 @@
-# jQuery-stylesheet
+# jCSSRule
 
- A simple jQuery plugin to manipulate CSS style sheet and set dynamic rules. 
+ Manipulate CSS style sheet and set dynamic rules. 
 
 ## How it runs?
 
-The plugin insert a new style sheet element on the page. It will be inserted where the js code is placed and will override other css style sheets placed before.
+The code insert a new style sheet element on the page. It will be inserted where the js code is placed and will override other css style sheets placed before.
 
 ## Usage
 
-- Use `$(selector).cssRule(property,value)` or `$(selector).cssRule({ property:value })` to add new rules for the selector.
-- `$(selector).cssRule(property)` to get the value for that key.
-- `$(selector).cssRule(property,null)` will remove the rule and use the default one.
-- `$("*").cssRule(null)` will remove all previous rules.
+- Use jCSSRule(selector,property,value) or jCSSRule(selector,{ property:value }) to add new rules for the selector.
+- jCSSRule(selector,property) to get the value for that key.
+- jCSSRule(selector,property,null) will remove the rule and use the default one defined in the css.
+- jCSSRule("*",null) will remove all previous rules.
 
-[See it in action](https://viglino.github.io/jQuery-stylesheet/)
+If you better like the jQuery syntaxe, use the [jQuery plugin](https://viglino.github.io/jCSSRule/jqindex.html).
+
+[See it in action](https://viglino.github.io/jCSSRule/)
 
 ## License
 
