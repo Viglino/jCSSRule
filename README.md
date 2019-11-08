@@ -8,10 +8,10 @@ The code insert a new style sheet element on the page. It will be inserted where
 
 ## Usage
 
-- Use jCSSRule(selector,property,value) or jCSSRule(selector,{ property:value }) to add new rules for the selector.
-- jCSSRule(selector,property) to get the value for that key.
-- jCSSRule(selector,property,null) will remove the rule and use the default one defined in the css.
-- jCSSRule("*",null) will remove all previous rules.
+- Use `jCSSRule(selector,property,value)` or `jCSSRule(selector, { property:value })` to add new rules for the selector.
+- 1jCSSRule(selector,property)` to get the value for that key.
+- 1jCSSRule(selector,property, null)` will remove the rule and use the default one defined in the css.
+- `jCSSRule("*", null)` will remove all previous rules.
 
 If you better like the jQuery syntaxe, use the [jQuery plugin](https://viglino.github.io/jCSSRule/jqindex.html).
 
